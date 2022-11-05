@@ -1,20 +1,19 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Chat from '../components/Chat';
+import ChatView from '../views/ChatView';
 
 import '../pages/Popup/index.css'
 
 export default {
-    component: Chat,
-} as ComponentMeta<typeof Chat>
+    component: ChatView,
+} as ComponentMeta<typeof ChatView>
 
-const Template: ComponentStory<typeof Chat> = (args) => <Chat {...args} />;
+const Template: ComponentStory<typeof ChatView> = (args) => <ChatView {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-    chatInfo: {
-        contact: {
+        contactInfo: {
             name: "Lauren Ipsum",
             profileImageUrl: "https://placekitten.com/300/300"
         },
@@ -30,5 +29,4 @@ Primary.args = {
             { isUser: true, isLast: true, message: "culpa qui officia deserunt mollit anim id est laborum" },
             { isUser: false, isLast: true, message: "Ok" },
         ]
-    }
-}
+};

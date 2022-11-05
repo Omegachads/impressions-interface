@@ -26,7 +26,7 @@ const ChatBubble: FC<ChatMessage> = ({
                 ${!isUser && isLast ? "rounded-bl-2xl" : ""}
                 ${isLast ? "mb-2" : "mb-1"}
             `}>
-                <p className="inline text-black">{message}</p>
+                <p className="inline text-black text-base">{message}</p>
             </div>
         </div>
 
