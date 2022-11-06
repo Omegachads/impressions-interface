@@ -21,7 +21,7 @@ const ImpressionsView: FC = () => {
                 profileImageUrl: "https://placekitten.com/300/300",
                 value: Number(ethers.utils.formatEther(a.amount)),
                 opened: false,
-            }));
+            })).filter((a) => a.value > 0);
 
             setImpressions(displayAds);
         })();
