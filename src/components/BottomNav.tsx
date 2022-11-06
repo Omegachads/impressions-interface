@@ -1,13 +1,12 @@
 import React, { FC } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import { ChatBubbleLeftRightIcon, EyeIcon, PlusCircleIcon, BellIcon, UserIcon, } from '@heroicons/react/24/solid'
 
+interface SetView {
+    (view: string) : void;
+}
 
-const Chat: FC = () => {
-
-    const navigate = useNavigate();
-
+const BottomNav: FC<{setView: SetView}> = ({ setView }) => {
     return (
         <div
             className="fixed bottom-0 w-full bg-base-300 flex flex-row justify-evenly"
@@ -17,7 +16,7 @@ const Chat: FC = () => {
             <button
                 className="h-full flex flex-col items-center my-2"
                 style={{height: "50px", width: "70px"}}
-                onClick={() => { navigate(-1) }}
+                onClick={() => { setView("chat") }}
             >
                 <ChatBubbleLeftRightIcon style={{height: "35px", width: "35px"}}/>
                 <p>Chat</p>
@@ -26,7 +25,7 @@ const Chat: FC = () => {
             <button
                 className="h-full flex flex-col items-center my-2"
                 style={{height: "50px", width: "70px"}}
-                onClick={() => { navigate(-1) }}
+                onClick={() => { setView("impressions") }}
             >
                 <EyeIcon style={{height: "35px", width: "35px"}}/>
                 <p>Impressions</p>
@@ -35,7 +34,7 @@ const Chat: FC = () => {
             <button
                 className="h-full flex flex-col items-center my-2"
                 style={{height: "50px", width: "70px"}}
-                onClick={() => { navigate(-1) }}
+                onClick={() => { setView("send") }}
             >
                 <PlusCircleIcon style={{height: "35px", width: "35px"}}/>
                 <p>Send</p>
@@ -44,7 +43,7 @@ const Chat: FC = () => {
             <button
                 className="h-full flex flex-col items-center my-2"
                 style={{height: "50px", width: "70px"}}
-                onClick={() => { navigate(-1) }}
+                onClick={() => { setView("notifications") }}
             >
                 <BellIcon style={{height: "35px", width: "35px"}}/>
                 <p>Notifications</p>
@@ -53,7 +52,7 @@ const Chat: FC = () => {
             <button
                 className="h-full flex flex-col items-center my-2"
                 style={{height: "50px", width: "70px"}}
-                onClick={() => { navigate(-1) }}
+                onClick={() => { setView("profile") }}
             >
                 <UserIcon style={{height: "35px", width: "35px"}}/>
                 <p>Profile</p>
@@ -63,4 +62,4 @@ const Chat: FC = () => {
     )
 }
 
-export default Chat;
+export default BottomNav;

@@ -23,7 +23,7 @@ const client = new ApolloClient({
 export async function getAds(to: string) {
   try {
     const data = await client.query({
-      query: gql(adsQuery(user)),
+      query: gql(adsQuery(to)),
     });
     return data;
   } catch (error) {
