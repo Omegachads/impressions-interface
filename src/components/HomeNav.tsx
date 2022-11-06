@@ -6,7 +6,7 @@ const Chat: FC<{ tokenBalance: number }> = ({
 
     return (
         <div
-            className="navbar sticky top-0 w-full bg-base-300"
+            className="navbar sticky top-0 w-full z-10 bg-base-300"
             style={{ height: "75px" }}
         >
             <div className="navbar-start h-full">

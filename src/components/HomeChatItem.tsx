@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 export interface HomeChatItemInfo {
-    id: string,
+    id: number,
     name: string,
     profileImageUrl: string,
     lastMessage: string,
